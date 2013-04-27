@@ -17,9 +17,12 @@ ActiveRecord::Schema.define(:version => 20130427012138) do
     t.string   "description"
     t.integer  "rating"
     t.string   "client_email"
+    t.integer  "user_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  add_index "feedback", ["user_id"], :name => "index_feedback_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

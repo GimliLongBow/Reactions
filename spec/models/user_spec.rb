@@ -11,11 +11,10 @@ describe User do
 	it "is invalid without an email" do 
 		FactoryGirl.build(:user, email: nil).should_not be_valid
 	end
-	it "has a name, email, and associated incidents" do
+	it "has a name, email, and associated feedback" do
 		user = FactoryGirl.create(:user)
-		user
-		# Create an incident.
-		# Validate the incident
+		feedback = FactoryGirl.create(:feedback, user: user)
+		feedback.user_id.should == user.id
 		user.should be_valid
 	end
 end
