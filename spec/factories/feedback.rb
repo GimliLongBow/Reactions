@@ -2,8 +2,7 @@ require 'faker'
 
 FactoryGirl.define do
   factory :feedback do 
-    description "talking with you about doing fun stuff."
-    rating 1
-    client_email { Faker::Internet.email }
+    comment { Faker::Lorem.paragraph() }
+    rating { Random.rand(1..3) }
   end
 end
