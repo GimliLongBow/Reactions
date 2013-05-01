@@ -5,15 +5,19 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 
 group :development, :test do
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
+	gem 'rspec-rails'
+	gem 'factory_girl_rails'
+end
+
+group :development do 
+	gem 'guard-rails'
 end
 
 group :test do
-  gem 'faker'
-  gem 'capybara'
-  gem 'guard-rspec'
-  gem 'launchy'
+	gem 'faker'
+	gem 'capybara'
+	gem 'guard-rspec'
+	gem 'launchy'
 end
 
 

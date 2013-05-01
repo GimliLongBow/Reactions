@@ -11,10 +11,28 @@ describe User do
 	it "is invalid without an email" do 
 		FactoryGirl.build(:user, email: nil).should_not be_valid
 	end
-	it "has a name, email, and associated feedback" do
-		user = FactoryGirl.create(:user)
-		feedback = FactoryGirl.create(:feedback, user: user)
-		feedback.user_id.should == user.id
-		user.should be_valid
+
+	describe "feedback tests" do
+		before :each do 
+			@charlie = FactoryGirl.create(:user)
+			@sally = FactoryGirl.create(:user)
+			@lousyFeedback = FactoryGirl.create(:feedback, user: @charlie, rating: 1)
+			@greatFeedback = FactoryGirl.create(:feedback, user: @charlie, rating: 3)
+			@mediocreFeedback = FactoryGirl.create(:feedback, user: @charlie, rating: 2)
+			@moreMediocreFeedback = FactoryGirl.create(:feedback, user: @charlie, rating: 2)
+		end
+
+		it "has associated feedback" do
+			@lousyFeedback.user_id.should == @charlie.id
+		end
+
+		it "has an average rating of 2" do
+			@charlie.average_rating.should == 2
+		end
+
+		it "has no rating" do
+			@sally.average_rating.should == 0
+		end
 	end
+
 end
