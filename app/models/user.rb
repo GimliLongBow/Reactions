@@ -7,11 +7,16 @@ class User < ActiveRecord::Base
 	has_many :feedback
 
 	def average_rating
-		avg = 0
-		if feedback.count > 0
-			feedback.each {|f| avg += f.rating}
-			avg = avg / feedback.count
-		end
-		return avg
+		feedback.count > 0 ? add_ratings / feedback.count : 0
+	end
+
+	def approval_rating
+		feedback.count > 0 ? add_ratings / (feedback.count * 3) * 100 : 0
+	end
+
+	def add_ratings
+		added_ratings = 0.0
+		feedback.each {|f| added_ratings += f.rating}
+		return added_ratings
 	end
 end

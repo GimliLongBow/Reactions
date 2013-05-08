@@ -18,7 +18,7 @@ describe User do
 			@sally = FactoryGirl.create(:user)
 			@lousyFeedback = FactoryGirl.create(:feedback, user: @charlie, rating: 1)
 			@greatFeedback = FactoryGirl.create(:feedback, user: @charlie, rating: 3)
-			@mediocreFeedback = FactoryGirl.create(:feedback, user: @charlie, rating: 2)
+			@mediocreFeedback = FactoryGirl.create(:feedback, user: @charlie, rating: 3)
 			@moreMediocreFeedback = FactoryGirl.create(:feedback, user: @charlie, rating: 2)
 		end
 
@@ -26,13 +26,23 @@ describe User do
 			@lousyFeedback.user_id.should == @charlie.id
 		end
 
-		it "has an average rating of 2" do
-			@charlie.average_rating.should == 2
-		end
-
 		it "has no rating" do
 			@sally.average_rating.should == 0
 		end
+
+		it "has an average rating of 2.25" do
+			@charlie.average_rating.should == 2.25
+		end
+
+		it "has a zero percent approval rating" do 
+			@sally.approval_rating.should == 0
+		end
+
+		it "has an approval rating of 75/100" do
+			@charlie.approval_rating.should == 75
+		end
+
+
 	end
 
 end
