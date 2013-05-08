@@ -14,6 +14,12 @@ class User < ActiveRecord::Base
 		feedback.count > 0 ? add_ratings / (feedback.count * 3) * 100 : 0
 	end
 
+	def self.highest_rated_users
+		# Find the top 5 highest rated users.
+	end
+
+	private
+
 	def add_ratings
 		added_ratings = 0.0
 		feedback.each {|f| added_ratings += f.rating}
