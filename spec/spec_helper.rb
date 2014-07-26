@@ -10,6 +10,12 @@ require "capybara/rspec"
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
+# Load the schema for in-memory tests.
+if Rails.configuration.database_configuration['test']['database'] == ':memory:'
+  puts "creating sqlite in memory database"
+  load "#{Rails.root}/db/schema.rb"
+end
+
 RSpec.configure do |config|
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
