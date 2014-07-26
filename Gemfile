@@ -23,6 +23,8 @@ group :test do
 	gem 'capybara'
 	gem 'guard-rspec'
 	gem 'launchy'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
 end
 
 # Assets.
