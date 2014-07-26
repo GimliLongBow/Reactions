@@ -3,17 +3,17 @@ require 'spec_helper'
 
 describe User do
 	it "has a valid factory" do
-		FactoryGirl.create(:user).should be_valid
+		expect(FactoryGirl.build(:user)).to be_valid
 	end
 	it "is invalid without a firstname" do
-		FactoryGirl.build(:user, name: nil).should_not be_valid
+		expect(FactoryGirl.build(:user, name: nil)).not_to be_valid
 	end
 	it "is invalid without an email" do 
-		FactoryGirl.build(:user, email: nil).should_not be_valid
+		expect(FactoryGirl.build(:user, email: nil)).not_to be_valid
 	end
 
 	describe "feedback tests" do
-		before :each do 
+		before(:example) do 
 			@charlie = FactoryGirl.create(:user)
 			@sally = FactoryGirl.create(:user)
 			@lousyFeedback = FactoryGirl.create(:feedback, user: @charlie, rating: 1)
@@ -23,23 +23,23 @@ describe User do
 		end
 
 		it "has associated feedback" do
-			@lousyFeedback.user_id.should == @charlie.id
+			expect(@lousyFeedback.user_id).to equal(@charlie.id)
 		end
 
 		it "has no rating" do
-			@sally.average_rating.should == 0
+			expect(@sally.average_rating).to equal(0)
 		end
 
 		it "has an average rating of 2.25" do
-			@charlie.average_rating.should == 2.25
+			expect(@charlie.average_rating).to equal(2.25)
 		end
 
 		it "has a zero percent approval rating" do 
-			@sally.approval_rating.should == 0
+			expect(@sally.approval_rating).to equal(0)
 		end
 
 		it "has an approval rating of 75/100" do
-			@charlie.approval_rating.should == 75
+			expect(@charlie.approval_rating).to equal(75.0)
 		end
 
 

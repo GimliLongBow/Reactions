@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe FeedbackController do
+RSpec.describe FeedbackController, :type => :controller do
 
   describe "GET 'new'" do
     it "returns http success" do
       get 'new'
-      response.should be_success
+      expect(response).to be_success
     end
   end
 
