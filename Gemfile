@@ -1,16 +1,21 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '~> 4.1.4', '>= 4.1.4'
 
 gem 'sqlite3'
+
+gem 'coveralls', require: false
+
 
 group :development, :test do
 	gem 'rspec-rails'
 	gem 'factory_girl_rails'
+  gem 'fuubar', '~> 2.0.0rc1'
 end
 
 group :development do 
 	gem 'guard-rails'
+  gem 'spring'
 end
 
 group :test do
@@ -20,16 +25,15 @@ group :test do
 	gem 'launchy'
 end
 
-
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
-  gem 'bootstrap-sass'
-end
-
+# Assets.
 gem 'jquery-rails'
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
+gem 'bootstrap-sass'
+
+# Authentication.
+gem 'bcrypt-ruby'
 gem 'clearance'
 
 # To use debugger

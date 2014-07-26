@@ -2,17 +2,17 @@ require 'spec_helper'
 
 describe Feedback do
 	it "has a valid factory" do
-		FactoryGirl.create(:feedback).should be_valid
+		expect(FactoryGirl.build(:feedback)).to be_valid
 	end
 
-	describe "dealing with ratings" do
+	describe "ratings" do
 
-		it "should have a rating and a comment" do
+		it "has a rating and a comment" do
 			user = FactoryGirl.create(:user)
 			feedback = FactoryGirl.create(:feedback, user: user)
-			feedback.user.should be_valid
-			feedback.rating.should be >= 1
-			feedback.rating.should be <= 3
+			expect(feedback.user).to be_valid
+			expect(feedback.rating).to be >= 1
+			expect(feedback.rating).to be <= 3
 		end
 	end
 end

@@ -3,10 +3,8 @@ class CreateFeedback < ActiveRecord::Migration
     create_table :feedback do |t|
       t.integer :rating
       t.text :comment
-      t.integer :user_id
+      t.references :user
       t.timestamps
     end
-
-    add_index :feedback, :user_id
   end
 end
