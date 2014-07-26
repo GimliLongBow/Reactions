@@ -23,23 +23,23 @@ describe User do
 		end
 
 		it "has associated feedback" do
-			expect(@lousyFeedback.user_id).to equal(@charlie.id)
+			expect(@lousyFeedback.user_id).to eq(@charlie.id)
 		end
 
 		it "has no rating" do
-			expect(@sally.average_rating).to equal(0)
+			expect(@sally.average_rating).to eq(0)
 		end
 
 		it "has an average rating of 2.25" do
-			expect(@charlie.average_rating).to equal(2.25)
+			expect(@charlie.average_rating).to eq(2.25)
 		end
 
 		it "has a zero percent approval rating" do 
-			expect(@sally.approval_rating).to equal(0)
+			expect(@sally.approval_rating).to eq(0)
 		end
 
 		it "has an approval rating of 75/100" do
-			expect(@charlie.approval_rating).to equal(75.0)
+			expect(@charlie.approval_rating).to eq(75.0)
 		end
 
 
