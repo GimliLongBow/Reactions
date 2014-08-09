@@ -114,8 +114,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.box = 'hashicorp/precise64'
 
-  #config.vm.provision "file", source: "vagrant/reactions.dev", destination: "/etc/apache2/sites-available"
-  #config.vm.provision "file", source: "vagrant/passenger.load", destination: "/etc/apache2/mods-available"
+  config.omnibus.chef_version = :latest
+
+  config.vm.provision :chef_solo do |chef|
+      chef.roles_path = "./vagrant/chef/roles"
+      chef.cookbooks_path = ["./vagrant/chef/site-cookbooks", "./vagrant/chef/cookbooks"]
+      chef.add_role "reactions-box"
+  end
+
   config.vm.provision "shell", path: "vagrant/reactions.superuser.sh"
   config.vm.provision "shell", path: "vagrant/reactions.user.sh", privileged: false
 end

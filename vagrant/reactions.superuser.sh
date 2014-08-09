@@ -15,7 +15,7 @@ echo -e "\nUsing $pm for package installation\n"
 echo -e "\n=> Installing build tools..."
 $pm -y install \
     wget curl build-essential clang \
-    bison openssl zlib1g \
+    bison zlib1g \
     libxslt1.1 libssl-dev libxslt1-dev \
     libxml2 libffi-dev libyaml-dev \
     libxslt-dev autoconf libc6-dev \
