@@ -22,3 +22,4 @@ sudo apachectl restart
 # Install the necessities.
 rbenv rehash
 bundle
+rake db:seed

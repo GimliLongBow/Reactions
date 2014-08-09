@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 4.1.4', '>= 4.1.4'
 
-gem 'sqlite3'
+gem 'mysql2'
 
 gem 'coveralls', require: false
 
@@ -37,6 +37,8 @@ gem 'bootstrap-sass'
 # Authentication.
 gem 'bcrypt-ruby'
 gem 'clearance'
+
+gem 'therubyracer'
 
 # To use debugger
 # gem 'debugger'
