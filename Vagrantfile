@@ -36,8 +36,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "passenger_apache2"
     chef.add_recipe "reactions"
 
-    # Install Ruby 2.1.2 and Bundler
-    # Set an empty root password for MySQL to make things simple
     chef.json = {
       rbenv: {
         rubies: [ "2.1.2" ],
@@ -48,6 +46,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             { name: "chef" },
             { name: "ohai" },
             { name: "bundler" },
+            { name: "daemon_controller"},
+            { name: "rack"},
+            { name: "rake"},
             { name: "passenger" },
           ]
         }
@@ -64,6 +65,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       }
     }
 
-    config.vm.provision "shell", inline: "cd /vagrant && bundle install && rake db:create db:migrate", privileged: false
+    config.vm.provision "shell", inline: "cd /vagrant && bundle install && rake db:setup", privileged: false
   end
 end
