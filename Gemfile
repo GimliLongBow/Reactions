@@ -19,6 +19,8 @@ group :development do
 end
 
 group :test do
+	gem 'pg'
+	gem 'sqlite3'
 	gem 'faker', '~> 1.4.2'
 	gem 'capybara', '~> 2.4.1'
 	gem 'guard-rspec', '~> 4.3.1'
