@@ -1,6 +1,6 @@
-class FeedbackController < ApplicationController
+class Admin::FeedbackController < ApplicationController
 	def new
-		
+
 	end
 
   private
