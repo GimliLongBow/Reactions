@@ -16,6 +16,10 @@ group :development, :test do
 	gem 'spring-commands-rspec'
 end
 
+group :development do
+	gem 'pry-rails'
+end
+
 group :test do
 	gem 'pg'
 	gem 'sqlite3'
