@@ -11,11 +11,9 @@ group :development, :test do
 	gem 'rspec-rails', '~> 3.0.2'
 	gem 'factory_girl_rails', '~> 4.4.1'
   gem 'fuubar', '~> 2.0.0'
-end
-
-group :development do
 	gem 'guard-rails', '~> 0.5.3'
-  gem 'spring', '~> 1.1.3'
+	gem 'spring', '~> 1.1.3'
+	gem 'spring-commands-rspec'
 end
 
 group :test do
