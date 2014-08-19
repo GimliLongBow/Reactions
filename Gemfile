@@ -18,6 +18,7 @@ end
 
 group :development do
 	gem 'pry-rails'
+	gem "better_errors"
 end
 
 group :test do

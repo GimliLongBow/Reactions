@@ -1,17 +1,21 @@
+require 'spec_helper'
+
 describe "the admin authentication process", :type => :feature do
   before :example do
-    User.make(:email => 'user@example.com', :password => 'caplin')
+    User.create!(:name => "Charlie", :email => 'user@example.com', :password => 'caplin')
   end
 
   it "authorizes correct credentials" do
     visit '/sign_in'
     within("#clearance") do
       fill_in 'Email', :with => 'user@example.com'
-      fill_in 'Password', :with => 'password'
+      fill_in 'Password', :with => 'caplin'
     end
     click_button 'Sign in'
-    expect(page).to have_content 'Success'
+    expect(page).to have_content 'Administrative'
   end
 
   it "rejects incorrect credentials"
+
+  it "protects admin section"
 end
