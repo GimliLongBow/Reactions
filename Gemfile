@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.1.4', '>= 4.1.4'
+gem 'rails', '~> 4.1.4', '>= 4.1.5'
 
 gem 'mysql2', '~> 0.3.16'
 
@@ -14,6 +14,7 @@ group :development, :test do
 	gem 'guard-rails', '~> 0.5.3'
 	gem 'spring', '~> 1.1.3'
 	gem 'spring-commands-rspec'
+	gem 'guard-cucumber'
 end
 
 group :development do
