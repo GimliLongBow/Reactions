@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  before_filter :authorize, :only => [:admin]
+  # before_filter :authorize, :only => [:admin]
 
   def index
   end
