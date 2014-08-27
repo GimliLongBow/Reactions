@@ -4,14 +4,14 @@ class User < ActiveRecord::Base
 	validates :name, :presence => true
 	validates :email, :presence => true
 
-	has_many :feedback
+	has_many :reviews
 
 	def average_rating
-		feedback.count > 0 ? add_ratings / feedback.count : 0
+		reviews.count > 0 ? add_reviews / reviews.count : 0
 	end
 
 	def approval_rating
-		feedback.count > 0 ? add_ratings / (feedback.count * 3) * 100 : 0
+		reviews.count > 0 ? add_reviews / (reviews.count * 3) * 100 : 0
 	end
 
 	def self.highest_rated_users
@@ -20,9 +20,9 @@ class User < ActiveRecord::Base
 
 	private
 
-	def add_ratings
+	def add_reviews
 		added_ratings = 0.0
-		feedback.each {|f| added_ratings += f.rating}
+		reviews.each {|f| added_ratings += f.rating}
 		return added_ratings
 	end
 end

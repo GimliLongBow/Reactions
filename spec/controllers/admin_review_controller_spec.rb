@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Admin::FeedbackController, :type => :controller do
+RSpec.describe Admin::ReviewsController, :type => :controller do
 
   describe "GET 'new'" do
     it "returns http success" do

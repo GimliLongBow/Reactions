@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20130427012138) do
 
-  create_table "feedback", force: true do |t|
+  create_table "reviews", force: true do |t|
     t.integer  "rating"
     t.text     "comment"
     t.integer  "user_id"

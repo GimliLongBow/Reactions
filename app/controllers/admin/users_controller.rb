@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class Admin::UsersController < ApplicationController
 
   private
   # Only allow a trusted parameter "white list" through.

@@ -8,22 +8,22 @@ describe User do
 	it "is invalid without a firstname" do
 		expect(FactoryGirl.build(:user, name: nil)).not_to be_valid
 	end
-	it "is invalid without an email" do 
+	it "is invalid without an email" do
 		expect(FactoryGirl.build(:user, email: nil)).not_to be_valid
 	end
 
-	describe "feedback tests" do
-		before(:example) do 
+	describe "review tests" do
+		before(:example) do
 			@charlie = FactoryGirl.create(:user)
 			@sally = FactoryGirl.create(:user)
-			@lousyFeedback = FactoryGirl.create(:feedback, user: @charlie, rating: 1)
-			@greatFeedback = FactoryGirl.create(:feedback, user: @charlie, rating: 3)
-			@mediocreFeedback = FactoryGirl.create(:feedback, user: @charlie, rating: 3)
-			@moreMediocreFeedback = FactoryGirl.create(:feedback, user: @charlie, rating: 2)
+			@lousyReview = FactoryGirl.create(:review, user: @charlie, rating: 1)
+			@greatReview = FactoryGirl.create(:review, user: @charlie, rating: 3)
+			@mediocreReview = FactoryGirl.create(:review, user: @charlie, rating: 3)
+			@moreMediocreReview = FactoryGirl.create(:review, user: @charlie, rating: 2)
 		end
 
-		it "has associated feedback" do
-			expect(@lousyFeedback.user_id).to eq(@charlie.id)
+		it "has associated review" do
+			expect(@lousyReview.user_id).to eq(@charlie.id)
 		end
 
 		it "has no rating" do
@@ -34,7 +34,7 @@ describe User do
 			expect(@charlie.average_rating).to eq(2.25)
 		end
 
-		it "has a zero percent approval rating" do 
+		it "has a zero percent approval rating" do
 			expect(@sally.approval_rating).to eq(0)
 		end
 

@@ -5,7 +5,7 @@ Feature: Review Submission
 
   Scenario: Valid user
     Given I visit a unique, one use URL
-    When I fill out feedback forms
+    When I fill out review forms
     Then I should see
       """
       Thank you!
@@ -18,9 +18,9 @@ Feature: Review Submission
       Sorry, invalid user
       """
 
-  Scenario: Incomplete feedback
+  Scenario: Incomplete review
     Given I visit a unique, one use URL
-    When I fill out feedback forms
+    When I submit the review form without filling it out
     Then I should see
       """
       Required

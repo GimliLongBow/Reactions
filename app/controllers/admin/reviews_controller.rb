@@ -1,6 +1,19 @@
-class Admin::FeedbackController < ApplicationController
-	def new
+class Admin::ReviewsController < ApplicationController
+	# before_filter :authorize
 
+	def index
+	end
+
+	def new
+	end
+
+	def create
+	end
+
+	def update
+	end
+
+	def edit
 	end
 
   private

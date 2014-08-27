@@ -7,4 +7,4 @@ Feature: User Management
     Given I am on viewing an existing user
     When I click on "Delete"
     Then a new user should be destroyed
-    And all associated feedback should be destroyed
+    And all associated reviews should be destroyed
