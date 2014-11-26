@@ -1,7 +1,6 @@
 language: ruby
 rvm:
   - 2.1.5
-  - 2.0.0-p451
 env:
   - DB=sqlite
   - DB=mysql
