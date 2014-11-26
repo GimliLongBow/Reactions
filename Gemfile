@@ -45,5 +45,5 @@ gem 'clearance', '~> 1.5.0'
 gem 'therubyracer', '~> 0.12.1'
 
 # Heroku!
-gem 'rails_12factor'
-gem 'puma'
+gem 'rails_12factor', '~> 0.0.3'
+gem 'puma', '~> 2.10.1'
