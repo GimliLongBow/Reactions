@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.5'
 
 gem 'rails', '~> 4.1.8'
 gem 'pg', '~> 0.17'
@@ -16,6 +17,7 @@ end
 group :development do
 	gem 'pry-rails', '~> 0.3'
 	gem 'better_errors', '~> 2'
+	gem 'foreman'
 end
 
 group :test do
@@ -42,5 +44,6 @@ gem 'clearance', '~> 1.5.0'
 
 gem 'therubyracer', '~> 0.12.1'
 
-# To use debugger
-# gem 'debugger'
+# Heroku!
+gem 'rails_12factor'
+gem 'puma'
