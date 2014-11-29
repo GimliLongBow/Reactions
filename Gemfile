@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.1.4', '>= 4.1.5'
+gem 'rails', '~> 4.1.7'
 
-gem 'mysql2', '~> 0.3.16'
+gem 'pg'
+gem 'unicorn'
 
 gem 'coveralls', '~> 0.7.0'
-
 
 group :development, :test do
 	gem 'rspec-rails', '~> 3.0.2'
@@ -14,22 +14,21 @@ group :development, :test do
 	gem 'guard-rails', '~> 0.5.3'
 	gem 'spring', '~> 1.1.3'
 	gem 'spring-commands-rspec'
-	gem 'guard-cucumber'
+	#gem 'guard-cucumber'
+	#gem 'cucumber-rails', '~> 1.4.1'
 end
 
 group :development do
 	gem 'pry-rails'
 	gem "better_errors"
+	gem 'foreman'
 end
 
 group :test do
-	gem 'pg'
-	gem 'sqlite3'
 	gem 'faker', '~> 1.4.2'
 	gem 'capybara', '~> 2.4.1'
 	gem 'guard-rspec', '~> 4.3.1'
 	gem 'launchy', '~> 2.4.2'
-  gem 'cucumber-rails', '~> 1.4.1'
   gem 'database_cleaner', '~> 1.3.0'
 end
 

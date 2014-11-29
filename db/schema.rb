@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20130427012138) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "reviews", force: true do |t|
     t.integer  "rating"
     t.text     "comment"

@@ -10,8 +10,10 @@
  *
  *= require_self
  *= require_tree .
- *= require bootstrap
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 /* Sticky footer styles
 -------------------------------------------------- */
