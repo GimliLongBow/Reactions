@@ -1,11 +1,8 @@
 source 'https://rubygems.org'
+ruby '2.1.5'
 
-gem 'rails', '~> 4.1.7'
-
-gem 'pg'
-gem 'unicorn'
-
-gem 'coveralls', '~> 0.7.0'
+gem 'rails', '~> 4.1.8'
+gem 'pg', '~> 0.17'
 
 group :development, :test do
 	gem 'rspec-rails', '~> 3.0.2'
@@ -13,14 +10,13 @@ group :development, :test do
   gem 'fuubar', '~> 2.0.0'
 	gem 'guard-rails', '~> 0.5.3'
 	gem 'spring', '~> 1.1.3'
-	gem 'spring-commands-rspec'
-	#gem 'guard-cucumber'
-	#gem 'cucumber-rails', '~> 1.4.1'
+	gem 'spring-commands-rspec', '~> 1.0'
+	gem 'coveralls', '~> 0.7.2'
 end
 
 group :development do
-	gem 'pry-rails'
-	gem "better_errors"
+	gem 'pry-rails', '~> 0.3'
+	gem 'better_errors', '~> 2'
 	gem 'foreman'
 end
 
@@ -33,17 +29,17 @@ group :test do
 end
 
 # Assets.
-gem 'jquery-rails', '~> 3.1.1'
-gem 'sass-rails', '~> 4.0.3'
-gem 'coffee-rails', '~> 4.0.1'
+gem 'jquery-rails', '~> 3.1'
+gem 'sass-rails', '~> 4.0.5'
 gem 'uglifier', '~> 2.5.3'
-gem 'bootstrap-sass', '~> 3.2.0.1'
+gem 'bootstrap-sass', '~> 3.3'
 
 # Authentication.
 gem 'bcrypt-ruby', '~> 3.1.5'
-gem 'clearance', '~> 1.4.0'
+gem 'clearance', '~> 1.5.0'
 
 gem 'therubyracer', '~> 0.12.1'
 
-# To use debugger
-# gem 'debugger'
+# Heroku!
+gem 'rails_12factor', '~> 0.0.3'
+gem 'puma', '~> 2.10.1'
