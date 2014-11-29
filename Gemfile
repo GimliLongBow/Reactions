@@ -21,6 +21,8 @@ group :development do
 end
 
 group :test do
+	gem 'sqlite3'
+	gem 'mysql2'
 	gem 'faker', '~> 1.4.2'
 	gem 'capybara', '~> 2.4.1'
 	gem 'guard-rspec', '~> 4.3.1'
@@ -35,8 +37,8 @@ gem 'uglifier', '~> 2.5.3'
 gem 'bootstrap-sass', '~> 3.3'
 
 # Authentication.
-gem 'bcrypt-ruby', '~> 3.1.5'
-gem 'clearance', '~> 1.5.0'
+gem 'bcrypt', '~> 3.1.9'
+gem 'devise', '~> 3.4.1'
 
 gem 'therubyracer', '~> 0.12.1'
 

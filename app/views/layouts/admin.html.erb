@@ -23,13 +23,16 @@
         </button>
         <a class="navbar-brand" href="/">Reactions</a>
       </div>
+      <% if user_signed_in? %>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li class="active"><a href="/admin">Dashboard</a></li>
           <li><a href="/admin/users">Users</a></li>
           <li><a href="/admin/reviews">Reviews</a></li>
+          <li><a href="<%= destroy_user_session_path %>">Sign Out</a></li>
         </ul>
       </div><!--/.nav-collapse -->
+      <% end %>
     </div>
   </div>
 
