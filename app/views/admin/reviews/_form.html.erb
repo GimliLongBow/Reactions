@@ -1,0 +1,12 @@
+<%= simple_form_for([:admin, @review]) do |f| %>
+
+  <%= f.input :rating, input_html: {min: 1, max: 3}  %>
+  <%= f.input :comment %>
+  <%= f.input :user, collection: User.all, label_method: :name, prompt: 'Select a user' %>
+
+  <div class="pull-right">
+    <%= f.button :submit, 'Save', class: 'btn btn-success' %>
+  </div>
+
+  <%= link_to 'Remove', admin_review_path(@review), method: :delete, data: { confirm: 'Are you sure you want to remove this review?' }, id: "delete_#{@review.id}", class: 'btn btn-danger' if @review.id %>
+<% end %>

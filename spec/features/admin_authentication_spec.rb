@@ -13,7 +13,7 @@ describe "the admin authentication process", :type => :feature do
     end
 
     click_button 'Sign in'
-    expect(page).to have_content 'Signed in'
+    expect(page).to have_content 'Administrative'
   end
 
   it "rejects incorrect credentials" do

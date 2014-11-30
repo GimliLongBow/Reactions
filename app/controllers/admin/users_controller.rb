@@ -3,7 +3,7 @@ class Admin::UsersController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
-		@users = User.by_last_updated.page(params[:page])
+		@users = User.all.page(params[:page])
 	end
 
 	def show
@@ -41,10 +41,10 @@ class Admin::UsersController < ApplicationController
 
 	private
 	def set_user
-		@user = user.find(params[:id])
+		@user = User.find(params[:id])
 	end
 
 	def user_params
-		params.require(:user).permit(:rating, :comments, :user_id)
+		params.require(:user).permit(:name, :email, :password, :password_confirmation)
 	end
 end

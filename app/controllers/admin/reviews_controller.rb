@@ -1,9 +1,9 @@
 class Admin::ReviewsController < ApplicationController
-	before_action :set_user, only: [:show, :edit, :update, :destroy]
+	before_action :set_review, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!
 
 	def index
-		@reviews = Review.by_last_updated.page(params[:page])
+		@reviews = Review.all.page(params[:page])
 	end
 
 	def show
@@ -39,12 +39,12 @@ class Admin::ReviewsController < ApplicationController
 		redirect_to admin_reviews_url, notice: 'Review was successfully destroyed.'
 	end
 
-private
+	private
 	def set_review
-		@review = review.find(params[:id])
+		@review = Review.find(params[:id])
 	end
-	
+
 	def review_params
-		params.require(:review).permit(:rating, :comments, :user_id)
+		params.require(:review).permit(:name, :email, :password, :password_confirmation)
 	end
 end
