@@ -1,6 +1,6 @@
 Reactions::Application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: { sessions: "sessions", passwords: "passwords" }
 
 	get 'admin', to: 'welcome#admin'
 
