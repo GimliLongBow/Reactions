@@ -5,19 +5,19 @@ gem 'rails', '~> 4.1.8'
 gem 'pg', '~> 0.17'
 
 group :development, :test do
-	gem 'rspec-rails', '~> 3.0.2'
-	gem 'factory_girl_rails', '~> 4.4.1'
+	gem 'rspec-rails', '~> 3.1.0'
+	gem 'factory_girl_rails', '~> 4.5'
   gem 'fuubar', '~> 2.0.0'
-	gem 'guard-rails', '~> 0.5.3'
-	gem 'spring', '~> 1.1.3'
+	gem 'guard-rails', '~> 0.7.0'
+	gem 'spring', '~> 1.2.0'
 	gem 'spring-commands-rspec', '~> 1.0'
-	gem 'coveralls', '~> 0.7.2'
+	gem 'coveralls', :git => 'https://github.com/lemurheavy/coveralls-ruby.git'
 end
 
 group :development do
 	gem 'pry-rails', '~> 0.3'
 	gem 'better_errors', '~> 2'
-	gem 'foreman'
+	gem 'foreman', '~> 0.76.0'
 end
 
 group :test do
