@@ -5,6 +5,7 @@ FactoryGirl.define do
   factory :review do
     comment { Faker::Lorem.paragraph() }
     rating { Random.rand(1..3) }
+    user
   end
 
   factory :user do
