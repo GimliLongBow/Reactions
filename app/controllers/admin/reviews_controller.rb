@@ -45,6 +45,6 @@ class Admin::ReviewsController < ApplicationController
 	end
 
 	def review_params
-		params.require(:review).permit(:name, :email, :password, :password_confirmation)
+		params.require(:review).permit(:rating, :comment, :user_id)
 	end
 end
