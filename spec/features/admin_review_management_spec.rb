@@ -59,11 +59,13 @@ describe "the admin review management process", :type => :feature do
   end
 
   context "editing a review" do
-    it "edits a rating" do
+    it "edits a rating, updates a comment, and changes a user" do
+      create(:user, name: 'Alternate')
       click_on test_person.name
 
       fill_in 'Rating', with: 3
       fill_in 'Comment', with: Faker::Lorem.paragraph
+      select 'Alternate', :from => 'User'
 
       click_on 'Save'
 

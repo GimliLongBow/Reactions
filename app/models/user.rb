@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   validates :name, :presence => true
   validates :email, :presence => true
