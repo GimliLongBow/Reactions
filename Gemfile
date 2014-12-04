@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.5'
 
-gem 'rails', '~> 4.1.8'
+gem 'rails', '~> 4.2.0.rc1'
 gem 'pg', '~> 0.17'
 
 group :development, :test do
@@ -29,7 +29,7 @@ group :test do
 end
 
 # Assets.
-gem 'jquery-rails', '~> 3.1'
+gem 'jquery-rails', '~> 4.0'
 gem 'sass-rails', '~> 4.0.5'
 gem 'uglifier', '~> 2.5.3'
 gem 'bootstrap-sass', '~> 3.3'
