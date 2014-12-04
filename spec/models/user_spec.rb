@@ -42,6 +42,16 @@ describe User do
 			expect(@charlie.approval_rating).to eq(75.0)
 		end
 
+		it "has a permalink" do
+			expect(@charlie.permalink).not_to be_empty
+		end
+
+		it "has a permalink which doesn't change after save" do
+			permalink = @charlie.permalink
+			@charlie.save!
+			expect(@charlie.permalink).to equal permalink
+		end
+
 
 	end
 
