@@ -13,7 +13,7 @@ describe "the admin authentication process", :type => :feature do
     fill_in 'Email', :with => 'user@example.com'
     fill_in 'Password', :with => 'caplin1234'
 
-    click_button 'Sign in'
+    click_on 'Sign in'
     expect(page).to have_content 'Administrative'
   end
 
@@ -23,7 +23,7 @@ describe "the admin authentication process", :type => :feature do
     fill_in 'Email', :with => 'user@example.com'
     fill_in 'Password', :with => 'daplin1234'
 
-    click_button 'Sign in'
+    click_on 'Sign in'
     expect(page).to have_content 'Sign in'
   end
 

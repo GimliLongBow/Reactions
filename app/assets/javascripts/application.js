@@ -12,4 +12,51 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require_tree .
+
+var Reactions = Reactions || {};
+
+Reactions.init = function() {
+  $(window).on('load', Reactions.checkWidth);
+  $(window).on('resize', Reactions.checkWidth);
+};
+
+Reactions.clickListeners = function() {
+  $('#toggle-navigation').on('click', Reactions.toggleNav);
+};
+
+Reactions.toggleNav = function(e) {
+  if ($('#sidebar > ul').is(":visible") === true) {
+    $('#main-content').css({
+      'margin-left': '0px'
+    });
+    $('#sidebar').css({
+      'margin-left': '-210px'
+    });
+    $('#sidebar > ul').hide();
+    $("#container").addClass("sidebar-closed");
+  } else {
+    $('#main-content').css({
+      'margin-left': '210px'
+    });
+    $('#sidebar > ul').show();
+    $('#sidebar').css({
+      'margin-left': '0'
+    });
+    $("#container").removeClass("sidebar-closed");
+  }
+};
+
+Reactions.checkWidth = function() {
+  var wSize = $(window).width();
+  if (wSize <= 768) {
+    $('#container').addClass('sidebar-close');
+    $('#sidebar > ul').hide();
+  }
+
+  if (wSize > 768) {
+    $('#container').removeClass('sidebar-close');
+    $('#sidebar > ul').show();
+  }
+};

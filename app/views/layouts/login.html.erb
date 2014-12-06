@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Please Log In | Reactions</title>
+
+  <%= render partial: 'shared/styles_meta' %>
+
+</head>
+<body id="login">
+
+  <div id="login-page">
+    <div class="container">
+
+      <%= yield %>
+
+    </div>
+  </div>
+<%= render partial: 'shared/scripts' %>
+<script>
+jQuery.backstretch("/assets/upside_down_lg.jpg", {speed: 500});
+</script>
+</body>
+</html>

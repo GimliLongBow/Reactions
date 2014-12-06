@@ -3,7 +3,8 @@ require 'spec_helper'
 describe "the admin review management process", :type => :feature do
   before :example do
     user = create(:user, name: 'Test Person')
-    login_as(user, :scope => :user)
+    admin = create(:user, name: 'Admin Guy')
+    login_as(admin, :scope => :user)
 
     create(:review, user: user)
   end

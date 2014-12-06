@@ -17,6 +17,7 @@ end
 group :development do
 	gem 'pry-rails', '~> 0.3'
 	gem 'better_errors', '~> 2'
+	gem 'binding_of_caller'
 	gem 'foreman', '~> 0.76.0'
 end
 
