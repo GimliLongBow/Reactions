@@ -9,7 +9,9 @@ Reactions::Application.routes.draw do
 		resources :reviews
 	end
 
-	resource :reviews, only: [:new, :create]
+  resources :reviews, only: [:edit, :update] do
+    get 'add/:permalink/:rating', action: 'add', as: :add, on: :collection
+  end
 
 	devise_scope :user do
 		root to: "sessions#new"
