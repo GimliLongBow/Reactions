@@ -20,6 +20,7 @@ var Reactions = Reactions || {};
 Reactions.init = function() {
   $(window).on('load', Reactions.checkWidth);
   $(window).on('resize', Reactions.checkWidth);
+  Reactions.clickListeners();
 };
 
 Reactions.clickListeners = function() {
@@ -31,9 +32,7 @@ Reactions.toggleNav = function(e) {
     $('#main-content').css({
       'margin-left': '0px'
     });
-    $('#sidebar').css({
-      'margin-left': '-210px'
-    });
+    $('#sidebar').css({ 'margin-left': '-210px' });
     $('#sidebar > ul').hide();
     $("#container").addClass("sidebar-closed");
   } else {
@@ -60,3 +59,5 @@ Reactions.checkWidth = function() {
     $('#sidebar > ul').show();
   }
 };
+
+$(document).ready(Reactions.init);
