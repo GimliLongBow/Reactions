@@ -18,28 +18,10 @@ if Rails.configuration.database_configuration['test']['database'] == ':memory:'
 end
 
 RSpec.configure do |config|
-  config.include FactoryGirl::Syntax::Methods
-  config.include Devise::TestHelpers, :type => :controller
-  config.extend ControllerMethods, :type => :controller
-  config.include Warden::Test::Helpers
-
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  #config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.use_transactional_fixtures = false
 
   config.infer_base_class_for_anonymous_controllers = false
 
   config.order = "random"
-
-  # Set up authentication test mode.
-  Warden.test_mode!
-
-  config.before(:suite) { FactoryGirl.lint }
-
-  # Database cleaner config
-  config.before(:suite) { DatabaseCleaner.clean_with :truncation }
-  config.before(:each) { DatabaseCleaner.strategy = :transaction }
-  config.before(:each, js: true) { DatabaseCleaner.strategy = :truncation }
-
-  config.before(:each) { DatabaseCleaner.start }
-  config.after(:each) { DatabaseCleaner.clean }
 end

@@ -28,6 +28,15 @@ describe "the admin user management process", :type => :feature do
       expect(page).to have_content name
     end
 
+    it "adds an admin user" do
+      name = Faker::Name.name
+
+      visit new_admin_user_path
+      fill_user_with(name, Faker::Internet.email, Faker::Internet.password, true)
+
+      expect(page).to have_content name
+    end
+
     it "checks login for new user" do
       password = Faker::Internet.password
       name = Faker::Name.name
@@ -108,12 +117,13 @@ describe "the admin user management process", :type => :feature do
 
   private
 
-  def fill_user_with(name, email, password)
+  def fill_user_with(name, email, password, admin=false)
 
     fill_in 'Name', with: name
     fill_in 'Email', with: email
     fill_in 'Password', with: password
     fill_in 'Password confirmation', with: password
+    find(:css, '#user_admin').set('true')
 
     click_on 'Save'
   end

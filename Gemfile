@@ -9,6 +9,7 @@ group :development, :test do
 	gem 'factory_girl_rails', '~> 4.5'
   gem 'fuubar', '~> 2.0.0'
 	gem 'guard-rails', '~> 0.7.0'
+	gem 'guard-puma', '~> 0.3'
 	gem 'spring', '~> 1.2.0'
 	gem 'spring-commands-rspec', '~> 1.0'
 	gem 'coveralls', :git => 'https://github.com/lemurheavy/coveralls-ruby.git'
@@ -38,6 +39,8 @@ gem 'bootstrap-sass', '~> 3.3'
 # Authentication.
 gem 'bcrypt', '~> 3.1.9'
 gem 'devise', '~> 3.4.1'
+# Authorization.
+gem 'pundit', '~> 0.3'
 
 gem 'therubyracer', '~> 0.12.1'
 
