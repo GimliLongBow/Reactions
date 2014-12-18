@@ -7,3 +7,8 @@ module ControllerMethods
     end
   end
 end
+
+
+RSpec.configure do |config|
+  config.extend ControllerMethods, :type => :controller
+end
